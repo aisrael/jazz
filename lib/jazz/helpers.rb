@@ -4,6 +4,7 @@ module Jazz
     VOID = 'javascript:void(0);'
     
     def self.included(cl)
+      cl.send :include, Jazz::FormHelpers
       ActionView::Helpers::FormBuilder.class_eval do
       
         def plus_minus_field(name, params = {})
