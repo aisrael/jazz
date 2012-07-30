@@ -1,8 +1,11 @@
-require 'jazz/helpers'
-require 'jazz/form_helpers'
+require 'active_support'
 
 module Jazz
-  VERSION = "0.0.1"  
-end
+  extend ActiveSupport::Autoload
 
-#raise 'the roof'
+  VERSION = "0.0.1"  
+
+  autoload :Helpers
+  autoload :FormHelpers  
+
+end
