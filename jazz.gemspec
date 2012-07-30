@@ -5,13 +5,13 @@ require 'jazz'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "jazz"
+  s.name        = 'jazz'
   s.version     = Jazz::VERSION
-  s.authors     = ["Alistair A. Israel"]
-  s.email       = ["aisrael@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Jazz."
-  s.description = "TODO: Description of Jazz."
+  s.authors     = ['Alistair A. Israel']
+  s.email       = ['aisrael@gmail.com']
+  s.homepage    = 'https://github.com/AlistairIsrael/jazz'
+  s.summary     = 'Jazz provides a set of useful UI helpers and other improvisations for use with Rails.'
+  s.description = 'Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. '
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

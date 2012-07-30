@@ -4,7 +4,7 @@ require 'rails/engine'
 module Jazz
   extend ActiveSupport::Autoload
 
-  VERSION = "0.0.1"  
+  VERSION = '0.1'  
 
   autoload :Helpers
   
