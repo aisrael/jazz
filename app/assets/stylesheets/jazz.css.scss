@@ -1,0 +1,38 @@
+@mixin button {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  padding: 0 0.5em;
+  border: 0.1em outset #eee;
+  color: #333;
+  background-color: #F5F5F5;
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #EEEEEE));
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #FFFFFF 0%, #DDDDDD 100%);
+}
+
+@mixin hover {
+  color: white;
+  background-image: none;
+  background-color: #909099;
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #BBBBBB), color-stop(1, #909099));
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #BBBBBB 0%, #909099 100%);
+}
+
+form {
+  .btn.jazz.plus, .btn.jazz.minus {
+    width: 0.5em;
+  }
+  input.jazz[type=number] {
+    &[size='2'] {
+      width: 2em;
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }  
+}
