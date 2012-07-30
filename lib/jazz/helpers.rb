@@ -6,25 +6,8 @@ module Jazz
     
     VOID = 'javascript:void(0);'
     
-    include Jazz::Bootstrap::FormHelpers
     include Jazz::Bootstrap::Helpers
-
-    # When Jazz::Helpers is included, monkey-patch ActionView::Helpers::FormBuilder
-    def self.included(cl)
-      ActionView::Helpers::FormBuilder.class_eval do
-      
-        def plus_minus_field(name, params = {})
-          options = { min: 1, max: 9, length: 2, size: 2, class: 'jazz' }.merge(params)
-          # Mimic how InstanceTag does it
-          sanitized_object_name = @object_name.to_s.gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_").sub(/_$/, "")
-          target_name = "#{sanitized_object_name}_#{name}"
-          @template.raw("<div class=\"input-prepend input-append\"><a href=\"javascript:void(0)\" class=\"jazz btn minus\" data-for=\"#{target_name}\">-</a>") +
-          number_field(name, options) +
-          @template.raw("<a href=\"javascript:void(0)\" class=\"jazz btn plus\" data-for=\"#{target_name}\">+</a></div>")
-        end
-      
-      end
-    end
+    include Jazz::Bootstrap::FormHelpers
 
     #
     # Render a <label../> tag
