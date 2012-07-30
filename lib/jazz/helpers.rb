@@ -1,12 +1,12 @@
-require 'jazz/helpers'
 require 'jazz/bootstrap/helpers'
+require 'jazz/bootstrap/form_helpers'
 
 module Jazz
   module Helpers
     
     VOID = 'javascript:void(0);'
     
-    include Jazz::FormHelpers
+    include Jazz::Bootstrap::FormHelpers
     include Jazz::Bootstrap::Helpers
 
     # When Jazz::Helpers is included, monkey-patch ActionView::Helpers::FormBuilder
@@ -66,6 +66,7 @@ module Jazz
       link_to text, target, options, *args
     end
     
+    # Render an <li ...><%= link ... %></li>
     def li_to(text, *args)
       params = args.last.is_a?(Hash) ? args.pop : {}
       li_options = params.slice(:class)
