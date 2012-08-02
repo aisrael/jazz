@@ -6,7 +6,10 @@ module Jazz
 
   VERSION = '0.1'  
 
-  autoload :Helpers
+  autoload_under 'bootstrap' do
+    autoload :Helpers
+    autoload :FormHelpers
+  end
   
   # Enable cool stuff
   class Engine < Rails::Engine

@@ -2,6 +2,8 @@ module Jazz
   module Bootstrap
     module Helpers
       
+      VOID = 'javascript:void(0);'
+      
       #
       # Render a <div class="btn-group"...>
       #
@@ -19,7 +21,7 @@ module Jazz
       def button_to(text, *args)
         text = t(text, default: text.to_s.titleize) if text.is_a?(Symbol)
         params = args.present? && args.last.is_a?(Hash) ? args.pop : {}
-        target = args.shift || Jazz::Helpers::VOID
+        target = args.shift || VOID
     
         if params[:class].is_a?(Array)
           params[:class] << 'btn'

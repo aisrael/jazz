@@ -13,7 +13,7 @@ module Jazz
       def self.included(cl)
         ActionView::Helpers::FormBuilder.class_eval do
           def plus_minus_field(name, params = {})
-            options = { min: 1, max: 9, length: 2, size: 2, class: 'jazz' }.merge(params)
+            options = { min: 1, max: 9, length: 2, size: 2, class: 'jazz plus_minus' }.merge(params)
             # Mimic how InstanceTag does it
             sanitized_object_name = @object_name.to_s.gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_").sub(/_$/, "")
             target_name = "#{sanitized_object_name}_#{name}"

@@ -24,10 +24,15 @@
 form {
   .btn.jazz.plus, .btn.jazz.minus {
     width: 0.5em;
+    // Fix the appearance of the plus_minus controls
+    vertical-align: top;
   }
-  input.jazz[type=number] {
+  input[type=number].jazz {
     &[size='2'] {
       width: 2em;
+    }
+    &.plus_minus {
+      vertical-align: top;
     }
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
