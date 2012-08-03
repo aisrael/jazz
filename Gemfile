@@ -13,4 +13,6 @@ group :development do
   gem "jeweler", "~> 1.8.4"
   gem 'rcov', '>= 0', :platforms => :mri_18
   gem 'simplecov', :platforms => :mri_19
+
+  gem 'sqlite3'
 end
