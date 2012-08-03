@@ -5,33 +5,71 @@
 
 Gem::Specification.new do |s|
   s.name = "jazz"
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-02"
+  s.date = "2012-08-03"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    ".gitignore",
+    "Gemfile",
+    "Gemfile.lock",
     "MIT-LICENSE",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "app/assets/javascripts/jazz.js.coffee",
     "app/assets/stylesheets/jazz.css.scss",
     "app/helpers/jazz_helper.rb",
+    "jazz.gemspec",
     "lib/jazz.rb",
     "lib/jazz/bootstrap/form_helpers.rb",
     "lib/jazz/bootstrap/helpers.rb",
-    "lib/tasks/jazz_tasks.rake"
+    "lib/tasks/jazz_tasks.rake",
+    "test/dummy/README.rdoc",
+    "test/dummy/Rakefile",
+    "test/dummy/app/assets/javascripts/application.js",
+    "test/dummy/app/assets/stylesheets/application.css",
+    "test/dummy/app/controllers/application_controller.rb",
+    "test/dummy/app/helpers/application_helper.rb",
+    "test/dummy/app/mailers/.gitignore",
+    "test/dummy/app/models/.gitignore",
+    "test/dummy/app/views/layouts/application.html.erb",
+    "test/dummy/config.ru",
+    "test/dummy/config/application.rb",
+    "test/dummy/config/boot.rb",
+    "test/dummy/config/database.yml",
+    "test/dummy/config/environment.rb",
+    "test/dummy/config/environments/development.rb",
+    "test/dummy/config/environments/production.rb",
+    "test/dummy/config/environments/test.rb",
+    "test/dummy/config/initializers/backtrace_silencers.rb",
+    "test/dummy/config/initializers/inflections.rb",
+    "test/dummy/config/initializers/mime_types.rb",
+    "test/dummy/config/initializers/secret_token.rb",
+    "test/dummy/config/initializers/session_store.rb",
+    "test/dummy/config/initializers/wrap_parameters.rb",
+    "test/dummy/config/locales/en.yml",
+    "test/dummy/config/routes.rb",
+    "test/dummy/lib/assets/.gitignore",
+    "test/dummy/log/.gitignore",
+    "test/dummy/public/404.html",
+    "test/dummy/public/422.html",
+    "test/dummy/public/500.html",
+    "test/dummy/public/favicon.ico",
+    "test/dummy/script/rails",
+    "test/jazz_test.rb",
+    "test/test_helper.rb"
   ]
   s.homepage = "https://github.com/AlistairIsrael/jazz"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
   s.summary = "Jazz provides a set of useful UI helpers and other improvisations for use with Railgem."
-  s.test_files = ["test/dummy", "test/dummy/README.rdoc", "test/dummy/Rakefile", "test/dummy/app", "test/dummy/app/assets", "test/dummy/app/assets/javascripts", "test/dummy/app/assets/javascripts/application.js", "test/dummy/app/assets/stylesheets", "test/dummy/app/assets/stylesheets/application.css", "test/dummy/app/controllers", "test/dummy/app/controllers/application_controller.rb", "test/dummy/app/helpers", "test/dummy/app/helpers/application_helper.rb", "test/dummy/app/mailers", "test/dummy/app/models", "test/dummy/app/views", "test/dummy/app/views/layouts", "test/dummy/app/views/layouts/application.html.erb", "test/dummy/config", "test/dummy/config/application.rb", "test/dummy/config/boot.rb", "test/dummy/config/database.yml", "test/dummy/config/environment.rb", "test/dummy/config/environments", "test/dummy/config/environments/development.rb", "test/dummy/config/environments/production.rb", "test/dummy/config/environments/test.rb", "test/dummy/config/initializers", "test/dummy/config/initializers/backtrace_silencers.rb", "test/dummy/config/initializers/inflections.rb", "test/dummy/config/initializers/mime_types.rb", "test/dummy/config/initializers/secret_token.rb", "test/dummy/config/initializers/session_store.rb", "test/dummy/config/initializers/wrap_parameters.rb", "test/dummy/config/locales", "test/dummy/config/locales/en.yml", "test/dummy/config/routes.rb", "test/dummy/config.ru", "test/dummy/db", "test/dummy/db/test.sqlite3", "test/dummy/lib", "test/dummy/lib/assets", "test/dummy/log", "test/dummy/log/development.log", "test/dummy/log/test.log", "test/dummy/public", "test/dummy/public/404.html", "test/dummy/public/422.html", "test/dummy/public/500.html", "test/dummy/public/favicon.ico", "test/dummy/script", "test/dummy/script/rails", "test/dummy/tmp", "test/dummy/tmp/cache", "test/dummy/tmp/cache/assets", "test/jazz_test.rb", "test/test_helper.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
