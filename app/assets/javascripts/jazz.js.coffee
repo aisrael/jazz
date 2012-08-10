@@ -23,8 +23,6 @@ $ ->
   decorate_plus_button($('form a.jazz.btn.plus'))
   
   # Make table rows with data-target attributes clickable
-  $('tr[data-target]').click ->
-    window.location = $(this).data('target')
-  # Prevent clicking on links from trigger the above
-  $('tr[data-target] a').click (e) ->
-    e.stopPropagation();
+  $('tr[data-target]').click (e) ->
+    if 'TD' == e.originalEvent.srcElement.tagName
+      window.location = $(this).data('target')
