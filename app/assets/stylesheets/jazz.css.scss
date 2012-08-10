@@ -41,3 +41,12 @@ form {
     }
   }  
 }
+
+// Support click on table rows
+tr[data-target] {
+  cursor: pointer;
+  td {
+    cursor: pointer;
+  }
+}
+
