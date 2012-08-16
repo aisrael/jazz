@@ -17,7 +17,7 @@ module Jazz
       # 
       # Render an <a class="btn" ...> tag.
       # 
-      def button_to(text, *args)
+      def btn_to(text, *args)
         text = t(text, default: text.to_s.titleize) if text.is_a?(Symbol)
         params = args.present? && args.last.is_a?(Hash) ? args.pop : {}
         target = args.shift || VOID
