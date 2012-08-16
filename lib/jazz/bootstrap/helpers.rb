@@ -4,7 +4,6 @@ module Jazz
       
       VOID = 'javascript:void(0);'
       
-      #
       # Render a <div class="btn-group"...>
       #
       def menu(items = {})
@@ -67,7 +66,7 @@ module Jazz
       #       = render @rows
       #
       def table(*args, &block)
-        params = args.present? && args.last.is_a?(Hash) || {}
+        params = args.present? && args.last.is_a?(Hash) ? args.pop : {}
         cl = params.delete(:class) || %w(table table-striped)
         cl = [cl] unless cl.is_a?(Array)
     
