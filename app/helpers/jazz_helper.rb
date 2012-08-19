@@ -16,7 +16,7 @@ module JazzHelper
     unless args.empty?
       label_tag target, *args, options
     else
-      label_tag target, "#{t(target, default: target.to_s.titleize)}:", options
+      label_tag target, t(target, default: target.to_s.titleize), options
     end
   end
 
