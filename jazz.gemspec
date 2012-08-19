@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "jazz"
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-16"
+  s.date = "2012-08-19"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [
@@ -25,12 +25,14 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/assets/javascripts/jazz.js.coffee",
     "app/assets/stylesheets/jazz.css.scss",
-    "app/helpers/jazz_helper.rb",
+    "app/helpers/jazz/helpers.rb",
     "jazz.gemspec",
     "lib/jazz.rb",
     "lib/jazz/bootstrap/form_helpers.rb",
     "lib/jazz/bootstrap/helpers.rb",
     "lib/tasks/jazz_tasks.rake",
+    "spec/jazz/jazz_helper_spec.rb",
+    "spec/spec_helper.rb",
     "test/dummy/README.rdoc",
     "test/dummy/Rakefile",
     "test/dummy/app/assets/javascripts/application.js",
@@ -76,36 +78,39 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, ["~> 3.2"])
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.11"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
+      s.add_development_dependency(%q<rails-i18n>, [">= 0"])
       s.add_runtime_dependency(%q<rails>, ["~> 3.2"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
-      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<rspec>, ["~> 2.11"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
+      s.add_dependency(%q<rails-i18n>, [">= 0"])
       s.add_dependency(%q<rails>, ["~> 3.2"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 3.2"])
-    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<rspec>, ["~> 2.11"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
+    s.add_dependency(%q<rails-i18n>, [">= 0"])
     s.add_dependency(%q<rails>, ["~> 3.2"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
   end
