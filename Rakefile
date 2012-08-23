@@ -22,7 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = 'Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. '
 
   gem.files             = `git ls-files`.split("\n")
-  gem.test_files        = `git ls-files -- {test}/*`.split("\n")
+  gem.test_files        = `git ls-files -- {test,spec}/*`.split("\n")
 
   gem.add_dependency 'rails', '~> 3.2'
 
