@@ -56,7 +56,7 @@ module Jazz
             args << { :icon  => :arrow_undo }
           end
         end 
-        button_to target, path, *args
+        btn_to target, path, *args
       end
     
       #
