@@ -51,7 +51,7 @@ module JazzHelper
   # Render an <li ...><%= link ... %></li>
   def li_to(text, *args)
     params = args.last.is_a?(Hash) ? args.pop : {}
-    li_options = params.slice(:class)
+    li_options = params.slice(:class, :method)
     if params.key?(:active)
       li_options[:class] = [li_options[:class], 'active'].compact if params.delete :active
     end
