@@ -58,6 +58,7 @@ module Jazz
         end 
         btn_to target, path, *args
       end
+      alias_method :back_btn, :back_button
     
       #
       # <table...> tag helper
