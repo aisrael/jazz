@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "jazz"
-  s.version = "0.3.3"
+  s.version = "0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-29"
+  s.date = "2012-08-31"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [

@@ -24,5 +24,6 @@ $ ->
   
   # Make table rows with data-target attributes clickable
   $('tr[data-target]').click (e) ->
-    if 'TD' == e.originalEvent.srcElement.tagName
+    src = e.srcElement || e.originalEvent.originalTarget
+    if 'TD' == src.tagName
       window.location = $(this).data('target')
