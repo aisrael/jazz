@@ -49,13 +49,11 @@ module Jazz
         else
           [:back, :back]
         end
-        if args.present?
-          if args.last.is_a?(Hash)
-            args.last[:icon] ||= :arrow_undo
-          else
-            args << { :icon  => :arrow_undo }
-          end
-        end 
+        if args.present? && args.last.is_a?(Hash)
+          args.last[:icon] ||= :arrow_undo
+        else
+          args << { :icon  => :arrow_undo }
+        end
         btn_to target, path, *args
       end
       alias_method :back_btn, :back_button
