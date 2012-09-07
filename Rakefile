@@ -39,7 +39,7 @@ end
 
 require 'rspec/core/rake_task'
 desc 'Run RSpec tests'
-RSpec::Core::RakeTask.new(:rspec) do |test|
+RSpec::Core::RakeTask.new(:spec) do |test|
   test.verbose = true
 end
 
