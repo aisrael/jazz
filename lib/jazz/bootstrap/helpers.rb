@@ -58,7 +58,6 @@ module Jazz
       end
       alias_method :back_btn, :back_button
     
-      #
       # <table...> tag helper
       #
       # Usage (HAML):
@@ -71,12 +70,21 @@ module Jazz
         cl = params.delete(:class) || %w(table table-striped)
         cl = [cl] unless cl.is_a?(Array)
     
-        headers = args.flatten.map {|a| content_tag :th, a.is_a?(Symbol) ? t(a, default: a.to_s.titleize) : a }.join
         options = {class: cl}.merge(params)
         content_tag :table, options do
-          content_tag(:thead, content_tag(:tr, raw(headers))) +
+          thead(args) +
           content_tag(:tbody, &block)
         end
+      end
+      
+      # <thead> tag helper
+      #
+      # Usage:
+      #
+      #   = thead :column_a, :column_b # => <thead><tr><th>Column A</th><th>Column B</th></tr></thead>
+      def thead(*args)
+        headers = args.flatten.map {|a| content_tag :th, a.is_a?(Symbol) ? t(a, default: a.to_s.titleize) : a }.join
+        content_tag(:thead, content_tag(:tr, raw(headers)))
       end
   
     end
