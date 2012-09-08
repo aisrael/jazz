@@ -15,7 +15,7 @@ describe JazzHelper do
   include JazzHelper
 
   describe 'label_for' do
-    it 'generates a <label...> tag' do
+    it 'generates a <label ...> tag' do
       self.should_receive(:t).with(:field, default: 'Field').and_return('Field')
       label_for(:field).should eq('<label for="field">Field</label>')
     end
