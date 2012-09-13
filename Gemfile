@@ -15,6 +15,6 @@ group :development do
   gem 'simplecov', :platforms => :mri_19
 
   gem 'sqlite3'
-  
+
   gem 'rails-i18n'
 end

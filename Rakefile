@@ -23,10 +23,6 @@ Jeweler::Tasks.new do |gem|
 
   gem.files             = `git ls-files`.split("\n")
   gem.test_files        = `git ls-files -- {test,spec}/*`.split("\n")
-
-  gem.add_dependency 'rails', '~> 3.2'
-
-  gem.add_development_dependency "sqlite3"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
