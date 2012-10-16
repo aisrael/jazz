@@ -12,9 +12,14 @@ end
 require 'rake'
 
 require 'jeweler'
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+require 'jazz'
+
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name        = 'jazz'
+  gem.version     = Jazz::VERSION
   gem.authors     = ['Alistair A. Israel']
   gem.email       = ['aisrael@gmail.com']
   gem.homepage    = 'https://github.com/AlistairIsrael/jazz'
