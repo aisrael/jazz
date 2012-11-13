@@ -6,13 +6,13 @@ describe Jazz::Bootstrap::Helpers do
 
   require 'active_support'
   require 'action_view'
-  
+
   include ActionView::Helpers
 
   it { is_a? Module }
 
   include Jazz::Bootstrap::Helpers
-  
+
   describe 'thead' do
     it 'generates a <thead ...> tag' do
       self.should_receive(:t).with(:a, default: 'A').and_return('A')
