@@ -9,14 +9,13 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-10-16"
+  s.date = "2012-11-20"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
-    ".gitignore",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
@@ -39,8 +38,6 @@ Gem::Specification.new do |s|
     "test/dummy/app/assets/stylesheets/application.css",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
-    "test/dummy/app/mailers/.gitignore",
-    "test/dummy/app/models/.gitignore",
     "test/dummy/app/views/layouts/application.html.erb",
     "test/dummy/config.ru",
     "test/dummy/config/application.rb",
@@ -58,9 +55,6 @@ Gem::Specification.new do |s|
     "test/dummy/config/initializers/wrap_parameters.rb",
     "test/dummy/config/locales/en.yml",
     "test/dummy/config/routes.rb",
-    "test/dummy/db/.gitignore",
-    "test/dummy/lib/assets/.gitignore",
-    "test/dummy/log/.gitignore",
     "test/dummy/public/404.html",
     "test/dummy/public/422.html",
     "test/dummy/public/500.html",
