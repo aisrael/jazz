@@ -12,16 +12,21 @@ end
 require 'rake'
 
 require 'jeweler'
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+require 'jazz'
+
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name        = 'jazz'
+  gem.version     = Jazz::VERSION
   gem.authors     = ['Alistair A. Israel']
   gem.email       = ['aisrael@gmail.com']
   gem.homepage    = 'https://github.com/AlistairIsrael/jazz'
   gem.summary     = 'Jazz provides a set of useful UI helpers and other improvisations for use with Railgem.'
   gem.description = 'Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. '
 
-  gem.files             = `git ls-files`.split("\n")
+  gem.files             = `git ls-files`.split("\n").reject {|s| File.basename(s) == '.gitignore' }
   gem.test_files        = `git ls-files -- {test,spec}/*`.split("\n")
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -52,10 +57,8 @@ task :default => :test
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "jazz #{version}"
+  rdoc.title = "jazz #{Jazz::VERSION}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

@@ -2,9 +2,9 @@ require 'jazz/bootstrap/helpers'
 require 'jazz/bootstrap/form_helpers'
 
 module JazzHelper
-  
+
   VOID = 'javascript:void(0);'
-  
+
   include Jazz::Bootstrap::Helpers
   include Jazz::Bootstrap::FormHelpers
 
@@ -42,12 +42,12 @@ module JazzHelper
     options = { title: text }
     options.merge!(args.pop) if args.last.is_a?(Hash)
 
-    target = args.shift 
+    target = args.shift
     target ||= to.is_a?(ActiveRecord::Base) ? to : VOID
 
     link_to text, target, options, *args
   end
-  
+
   # Render an <li ...><%= link ... %></li>
   def li_to(text, *args)
     params = args.last.is_a?(Hash) ? args.pop : {}

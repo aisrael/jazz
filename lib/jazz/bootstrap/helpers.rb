@@ -1,9 +1,9 @@
 module Jazz
   module Bootstrap
     module Helpers
-      
+
       VOID = 'javascript:void(0);'
-      
+
       # Render a <div class="btn-group"...>
       #
       def menu(items = {})
@@ -13,23 +13,23 @@ module Jazz
           }.join("\n"))
         end
       end
-    
-      # 
+
+      #
       # Render an <a class="btn" ...> tag.
-      # 
+      #
       def btn_to(text, *args)
         text = t(text, default: text.to_s.titleize) if text.is_a?(Symbol)
         params = args.present? && args.last.is_a?(Hash) ? args.pop : {}
         target = args.shift || VOID
-    
+
         if params[:class].is_a?(Array)
           params[:class] << 'btn'
         else
           params[:class] = ['btn', params[:class]].compact
         end
-    
+
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
-    
+
         if params.key? :icon
           icon = params.delete :icon
           args << params
@@ -39,7 +39,7 @@ module Jazz
           link_to(text, target, *args)
         end
       end
-    
+
       def back_button(*args)
         target, path = case
         when args.size > 1
@@ -57,7 +57,7 @@ module Jazz
         btn_to target, path, *args
       end
       alias_method :back_btn, :back_button
-    
+
       # <table...> tag helper
       #
       # Usage (HAML):
@@ -69,14 +69,14 @@ module Jazz
         params = args.present? && args.last.is_a?(Hash) ? args.pop : {}
         cl = params.delete(:class) || %w(table table-striped)
         cl = [cl] unless cl.is_a?(Array)
-    
+
         options = {class: cl}.merge(params)
         content_tag :table, options do
           thead(args) +
           content_tag(:tbody, &block)
         end
       end
-      
+
       # <thead> tag helper
       #
       # Usage:
@@ -86,7 +86,7 @@ module Jazz
         headers = args.flatten.map {|a| content_tag :th, a.is_a?(Symbol) ? t(a, default: a.to_s.titleize) : a }.join
         content_tag(:thead, content_tag(:tr, raw(headers)))
       end
-  
+
     end
   end
 end

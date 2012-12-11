@@ -5,24 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = "jazz"
-  s.version = "0.3.5"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-09-09"
+  s.date = "2012-11-20"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
-    ".gitignore",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
     "README.rdoc",
     "Rakefile",
-    "VERSION",
     "app/assets/javascripts/jazz.js.coffee",
     "app/assets/stylesheets/jazz.css.scss",
     "app/helpers/jazz_helper.rb",
@@ -40,8 +38,6 @@ Gem::Specification.new do |s|
     "test/dummy/app/assets/stylesheets/application.css",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
-    "test/dummy/app/mailers/.gitignore",
-    "test/dummy/app/models/.gitignore",
     "test/dummy/app/views/layouts/application.html.erb",
     "test/dummy/config.ru",
     "test/dummy/config/application.rb",
@@ -59,9 +55,6 @@ Gem::Specification.new do |s|
     "test/dummy/config/initializers/wrap_parameters.rb",
     "test/dummy/config/locales/en.yml",
     "test/dummy/config/routes.rb",
-    "test/dummy/db/.gitignore",
-    "test/dummy/lib/assets/.gitignore",
-    "test/dummy/log/.gitignore",
     "test/dummy/public/404.html",
     "test/dummy/public/422.html",
     "test/dummy/public/500.html",
@@ -89,8 +82,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<rails-i18n>, [">= 0"])
-      s.add_runtime_dependency(%q<rails>, ["~> 3.2"])
-      s.add_development_dependency(%q<sqlite3>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
       s.add_dependency(%q<rspec>, ["~> 2.11"])
@@ -101,8 +92,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<rails-i18n>, [">= 0"])
-      s.add_dependency(%q<rails>, ["~> 3.2"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 3.2"])
@@ -114,8 +103,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<rails-i18n>, [">= 0"])
-    s.add_dependency(%q<rails>, ["~> 3.2"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
   end
 end
 
