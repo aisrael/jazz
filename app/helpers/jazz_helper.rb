@@ -1,3 +1,4 @@
+require 'jazz/form_helpers'
 require 'jazz/bootstrap/helpers'
 require 'jazz/bootstrap/form_helpers'
 
@@ -5,6 +6,9 @@ module JazzHelper
 
   VOID = 'javascript:void(0);'
 
+  include Jazz::FormHelpers
+
+  # TODO Move to jazz-bootstrap
   include Jazz::Bootstrap::Helpers
   include Jazz::Bootstrap::FormHelpers
 
