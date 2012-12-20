@@ -1,3 +1,5 @@
+require 'action_view/helpers'
+
 module Jazz
   module Bootstrap
     module FormHelpers

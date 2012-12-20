@@ -28,6 +28,8 @@ Jeweler::Tasks.new do |gem|
 
   gem.files             = `git ls-files`.split("\n").reject {|s| File.basename(s) == '.gitignore' }
   gem.test_files        = `git ls-files -- {test,spec}/*`.split("\n")
+
+  gem.add_dependency 'simplecov'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

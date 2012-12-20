@@ -1,13 +1,9 @@
 require 'spec_helper'
 
-require 'jazz/form_helpers'
-
-describe Jazz::FormHelpers do
-  include Jazz::FormHelpers
+describe Jazz::FormHelpers, type: :helper do
   describe 'date_field_tag' do
     it 'renders an HTML 5 <input type="date" ...> tag' do
-      self.should_receive(:content_tag).with(:input, nil, type: :date, name: :test)
-      date_field_tag :test
+      helper.date_field_tag(:test).should eq('<input name="test" type="date" />')
     end
   end
 end
