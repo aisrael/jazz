@@ -1,7 +1,5 @@
 require 'rubygems'
 require 'bundler'
-require 'rails/all'
-require 'jazz'
 
 require File.expand_path("../../test/dummy/config/environment", __FILE__)
 require 'rspec/rails'
