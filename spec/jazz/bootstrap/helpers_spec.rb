@@ -24,5 +24,8 @@ describe Jazz::Bootstrap::Helpers, type: :helper do
     it 'allows any other parameter through' do
       helper.btn(:delete, data: {confirm: 'Are you sure?'}).should eq '<button class="btn" data-confirm="Are you sure?" name="delete" type="button">Delete</button>'
     end
+    it 'works' do
+      helper.btn(:delete, data: {confirm: 'Are you sure?'}, title: :delete_person).should eq '<button class="btn" data-confirm="Are you sure?" name="delete" title="Delete Person" type="button">Delete</button>'
+    end
   end
 end

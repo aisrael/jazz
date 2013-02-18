@@ -32,11 +32,12 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
+        # only works if famfam_icon defined at run-time
         if params.key? :icon
           icon = params.delete :icon
-          button_tag button_text, params { famfam_icon(icon) + text }
+          button_tag(button_text, params) { famfam_icon(icon) + button_text }
         else
-          button_tag button_text, params
+          button_tag(button_text, params)
         end
       end
 
@@ -56,6 +57,7 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
+        # only works if famfam_icon defined at run-time
         if params.key? :icon
           icon = params.delete :icon
           args << params
