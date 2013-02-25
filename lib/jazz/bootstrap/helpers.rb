@@ -14,6 +14,33 @@ module Jazz
         end
       end
 
+      def btn(text, params = {})
+        params[:type] = :button unless params[:type]
+
+        button_text = if text.is_a?(Symbol)
+          params[:name] = text unless params[:name]
+          t(text, default: text.to_s.titleize)
+        else
+          text
+        end
+
+        if params[:class].is_a?(Array)
+          params[:class].unshift 'btn' unless params[:class].find {|e| e.to_s == 'btn' }
+        else
+          params[:class] = ['btn', params[:class]].compact
+        end
+
+        params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
+
+        # only works if famfam_icon defined at run-time
+        if params.key? :icon
+          icon = params.delete :icon
+          button_tag(button_text, params) { famfam_icon(icon) + button_text }
+        else
+          button_tag(button_text, params)
+        end
+      end
+
       #
       # Render an <a class="btn" ...> tag.
       #
@@ -30,6 +57,7 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
+        # only works if famfam_icon defined at run-time
         if params.key? :icon
           icon = params.delete :icon
           args << params
