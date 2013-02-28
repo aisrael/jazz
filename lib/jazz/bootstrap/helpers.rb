@@ -14,8 +14,13 @@ module Jazz
         end
       end
 
-      def btn(text, params = {})
-        params[:type] = :button unless params[:type]
+      def btn(*args, &block)
+        params = if args.last.is_a?(Hash)
+          {type: :button}.merge(args.pop)
+        else
+          {type: :button}
+        end 
+        text = args.shift
 
         button_text = if text.is_a?(Symbol)
           params[:name] = text unless params[:name]
@@ -32,12 +37,12 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
-        # only works if famfam_icon defined at run-time
         if params.key? :icon
           icon = params.delete :icon
+          # only works if famfam_icon defined at run-time
           button_tag(button_text, params) { famfam_icon(icon) + button_text }
         else
-          button_tag(button_text, params)
+          button_tag(button_text, params, &block)
         end
       end
 
