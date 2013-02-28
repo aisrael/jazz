@@ -5,17 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = "jazz"
-  s.version = "0.4.2"
+  s.version = "0.4.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2013-02-18"
+  s.date = "2013-02-28"
   s.description = "Basically, I just got tired of copy pasting files from one project to another so decided to get my feet wet writing a Rails plugin/engine gem. "
   s.email = ["aisrael@gmail.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    ".rspec",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
