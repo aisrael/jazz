@@ -37,10 +37,12 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
-        if params.key? :icon
+        if params.key?(:icon)
           icon = params.delete :icon
           # only works if famfam_icon defined at run-time
-          button_tag(button_text, params) { famfam_icon(icon) + button_text }
+          button_tag(button_text, params) { 
+            [defined?(famfam_icon) && famfam_icon(icon), button_text].compact.join 
+          }
         else
           button_tag(button_text, params, &block)
         end
@@ -55,7 +57,7 @@ module Jazz
         target = args.shift || VOID
 
         if params[:class].is_a?(Array)
-          params[:class] << 'btn'
+          params[:class] |= 'btn'
         else
           params[:class] = ['btn', params[:class]].compact
         end
@@ -63,10 +65,10 @@ module Jazz
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
         # only works if famfam_icon defined at run-time
-        if params.key? :icon
+        if params.key?(:icon)
           icon = params.delete :icon
           args << params
-          link_to(target, *args) { famfam_icon(icon) + text }
+          link_to(target, *args) { [defined?(famfam_icon) && famfam_icon(icon), text].compact.join }
         else
           args << params
           link_to(text, target, *args)
@@ -74,6 +76,8 @@ module Jazz
       end
 
       def back_button(*args)
+        params = args.last.is_a?(Hash) ? args.pop : {}
+        params[:icon] ||= :arrow_undo
         target, path = case
         when args.size > 1
           [args.shift, args.shift]
@@ -82,12 +86,7 @@ module Jazz
         else
           [:back, :back]
         end
-        if args.present? && args.last.is_a?(Hash)
-          args.last[:icon] ||= :arrow_undo
-        else
-          args << { :icon  => :arrow_undo }
-        end
-        btn_to target, path, *args
+        btn_to target, path, *(args + [params])
       end
       alias_method :back_btn, :back_button
 
