@@ -40,8 +40,9 @@ module Jazz
         if params.key?(:icon)
           icon = params.delete :icon
           # only works if famfam_icon defined at run-time
-          button_tag(button_text, params) { 
-            [defined?(famfam_icon) && famfam_icon(icon), button_text].compact.join 
+          button_tag(button_text, params) {
+            concat famfam_icon(icon) if defined? famfam_icon
+            concat button_text 
           }
         else
           button_tag(button_text, params, &block)
@@ -68,7 +69,10 @@ module Jazz
         if params.key?(:icon)
           icon = params.delete :icon
           args << params
-          link_to(target, *args) { [defined?(famfam_icon) && famfam_icon(icon), text].compact.join }
+          link_to(target, *args) {
+            concat famfam_icon(icon) if defined? famfam_icon
+            concat text 
+          }
         else
           args << params
           link_to(text, target, *args)
