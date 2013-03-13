@@ -14,8 +14,13 @@ module Jazz
         end
       end
 
-      def btn(text, params = {})
-        params[:type] = :button unless params[:type]
+      def btn(*args, &block)
+        params = if args.last.is_a?(Hash)
+          {type: :button}.merge(args.pop)
+        else
+          {type: :button}
+        end 
+        text = args.shift
 
         button_text = if text.is_a?(Symbol)
           params[:name] = text unless params[:name]
@@ -32,12 +37,15 @@ module Jazz
 
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
-        # only works if famfam_icon defined at run-time
-        if params.key? :icon
+        if params.key?(:icon)
           icon = params.delete :icon
-          button_tag(button_text, params) { famfam_icon(icon) + button_text }
+          # only works if famfam_icon defined at run-time
+          button_tag(button_text, params) {
+            concat famfam_icon(icon) if defined? famfam_icon
+            concat button_text 
+          }
         else
-          button_tag(button_text, params)
+          button_tag(button_text, params, &block)
         end
       end
 
@@ -50,7 +58,7 @@ module Jazz
         target = args.shift || VOID
 
         if params[:class].is_a?(Array)
-          params[:class] << 'btn'
+          params[:class] |= 'btn'
         else
           params[:class] = ['btn', params[:class]].compact
         end
@@ -58,10 +66,13 @@ module Jazz
         params[:title] = t(params[:title], default: params[:title].to_s.titleize) if params[:title].is_a?(Symbol)
 
         # only works if famfam_icon defined at run-time
-        if params.key? :icon
+        if params.key?(:icon)
           icon = params.delete :icon
           args << params
-          link_to(target, *args) { famfam_icon(icon) + text }
+          link_to(target, *args) {
+            concat famfam_icon(icon) if defined? famfam_icon
+            concat text 
+          }
         else
           args << params
           link_to(text, target, *args)
@@ -69,6 +80,8 @@ module Jazz
       end
 
       def back_button(*args)
+        params = args.last.is_a?(Hash) ? args.pop : {}
+        params[:icon] ||= :arrow_undo
         target, path = case
         when args.size > 1
           [args.shift, args.shift]
@@ -77,12 +90,7 @@ module Jazz
         else
           [:back, :back]
         end
-        if args.present? && args.last.is_a?(Hash)
-          args.last[:icon] ||= :arrow_undo
-        else
-          args << { :icon  => :arrow_undo }
-        end
-        btn_to target, path, *args
+        btn_to target, path, *(args + [params])
       end
       alias_method :back_btn, :back_button
 

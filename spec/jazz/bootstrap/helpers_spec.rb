@@ -27,5 +27,19 @@ describe Jazz::Bootstrap::Helpers, type: :helper do
     it 'works' do
       helper.btn(:delete, data: {confirm: 'Are you sure?'}, title: :delete_person).should eq '<button class="btn" data-confirm="Are you sure?" name="delete" title="Delete Person" type="button">Delete</button>'
     end
+    it 'allows you to provide a block for content' do
+      helper.btn(data: {confirm: 'Are you sure?'}, title: :delete_person) {
+        helper.sanitize(helper.content_tag(:i, nil, class: 'icon-remove'))
+      }.should eq '<button class="btn" data-confirm="Are you sure?" name="button" title="Delete Person" type="button"><i class="icon-remove"></i></button>'
+    end
+  end
+  
+  describe 'back_btn' do
+    it 'generates a back btn link' do
+      helper.back_btn.should eq '<a href="javascript:history.back()" class="btn">Back</a>'
+    end
+    it 'allows an additional class' do
+      helper.back_btn(class: 'back').should eq '<a href="javascript:history.back()" class="btn back">Back</a>'
+    end
   end
 end

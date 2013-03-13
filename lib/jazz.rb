@@ -5,7 +5,7 @@ require 'rails/engine'
 module Jazz
 #  extend ActiveSupport::Autoload
 
-  VERSION = '0.4.2'
+  VERSION = '0.4.2.3'
 
 # autoload :FormHelpers
 # 
