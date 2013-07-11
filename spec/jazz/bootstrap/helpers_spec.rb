@@ -36,10 +36,10 @@ describe Jazz::Bootstrap::Helpers, type: :helper do
   
   describe 'back_btn' do
     it 'generates a back btn link' do
-      helper.back_btn.should eq '<a href="javascript:history.back()" class="btn">Back</a>'
+      helper.back_btn.should eq '<a class="btn" href="javascript:history.back()">Back</a>'
     end
     it 'allows an additional class' do
-      helper.back_btn(class: 'back').should eq '<a href="javascript:history.back()" class="btn back">Back</a>'
+      helper.back_btn(class: 'back').should eq '<a class="btn back" href="javascript:history.back()">Back</a>'
     end
   end
 end
