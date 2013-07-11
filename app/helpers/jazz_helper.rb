@@ -47,7 +47,7 @@ module JazzHelper
     options.merge!(args.pop) if args.last.is_a?(Hash)
 
     target = args.shift
-    target ||= to.is_a?(ActiveRecord::Base) ? to : VOID
+    target ||= (defined?(ActiveRecord) && to.is_a?(ActiveRecord::Base)) ? to : VOID
 
     link_to text, target, options, *args
   end
