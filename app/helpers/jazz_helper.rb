@@ -38,7 +38,7 @@ module JazzHelper
     text = case
     when to.is_a?(Symbol)
       to = t(to, default: to.to_s.titleize)
-    when to.is_a?(ActiveRecord::Base) && to.respond_to?(:name)
+    when to.respond_to?(:name)
       to.name
     else
       to
