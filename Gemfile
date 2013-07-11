@@ -7,6 +7,9 @@ ruby '2.0.0'
 #   gem "activesupport", ">= 2.3.5"
 gem 'rails', '~> 4.0.0'
 
+# Forked from https://github.com/dmoulton/silk-bootstrap-rails
+gem 'silk-bootstrap-rails-4', github: 'AlistairIsrael/silk-bootstrap-rails-4', tag: '0.1'
+
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
