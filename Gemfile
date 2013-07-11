@@ -8,7 +8,7 @@ ruby '2.0.0'
 gem 'rails', '~> 4.0.0'
 
 # Forked from https://github.com/dmoulton/silk-bootstrap-rails
-gem 'silk-bootstrap-rails-4', github: 'AlistairIsrael/silk-bootstrap-rails-4', tag: '0.1'
+gem 'silk-bootstrap-rails', github: 'AlistairIsrael/silk-bootstrap-rails-4', tag: '0.1'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
