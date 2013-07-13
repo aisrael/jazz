@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/AlistairIsrael/silk-bootstrap-rails-4.git
-  revision: 1f48190730f15ef2678336158fedab20e34a7437
-  tag: 0.1
-  specs:
-    silk-bootstrap-rails (0.1.0)
-      jeweler
-      railties (~> 4.0.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -147,10 +138,9 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.3)
   jeweler (~> 1.8.6)
-  rails (~> 4.0.0)
+  rails (= 4.0.0)
   rdoc (~> 3.12)
   rspec (~> 2.14)
   rspec-rails (~> 2.14)
-  silk-bootstrap-rails!
   simplecov
   sqlite3
