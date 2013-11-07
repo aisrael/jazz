@@ -38,7 +38,7 @@ module JazzHelper
     text = case
     when to.is_a?(Symbol)
       to = t(to, default: to.to_s.titleize)
-    when to.is_a?(ActiveRecord::Base) && to.respond_to?(:name)
+    when to.respond_to?(:name)
       to.name
     else
       to
@@ -47,7 +47,7 @@ module JazzHelper
     options.merge!(args.pop) if args.last.is_a?(Hash)
 
     target = args.shift
-    target ||= to.is_a?(ActiveRecord::Base) ? to : VOID
+    target ||= (defined?(ActiveRecord) && to.is_a?(ActiveRecord::Base)) ? to : VOID
 
     link_to text, target, options, *args
   end
